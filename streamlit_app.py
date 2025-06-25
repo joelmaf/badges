@@ -3,16 +3,6 @@ import json
 import os
 import re
 
-CAMINHO_JSON = "badges.json"
-
-#def carregar_dados():
-#    try:
-#        with open(CAMINHO_JSON, "r", encoding="utf-8") as f:
-#            return json.load(f)
-#    except Exception:
-#        st.error("Erro ao buscar os dados.")
-#        return []
-
 def carregar_dados():
     try:
         conteudo = st.secrets["badges"]["conteudo"]
@@ -20,7 +10,6 @@ def carregar_dados():
     except Exception:
         st.error("Erro ao carregar os dados.")
         return []
-
 
 def validar_dados(cpf, codigo, dados):
     cpf = cpf.strip()
